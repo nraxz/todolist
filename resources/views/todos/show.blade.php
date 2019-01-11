@@ -9,8 +9,18 @@
                 <hr>
                 <p class="lead">{{$todo->body}}</p>
 
+
+                <a href="/todo/{{$todo->id}}/edit" class="btn btn-default">Edit</a>
+
+                {!! Form::open(['action' => ['TodosController@destroy', $todo->id], 'method' => 'POST', 'class' => 'pull-right']) !!}
+
+                    {{Form::hidden('_method', 'Delete')}}
+                    {{Form::bsSubmit('Delete', ['class' => "btn btn-danger"])}}
+
+                {!! Form::close() !!}
             </div>
-    <a href="/todo/{{$todo->id}}/edit" class="btn btn-default">Edit</a>
-    <a href="{{$todo->id}}/edit" class="btn btn-danger">Delete</a>
+
+
+
 
 @endsection
