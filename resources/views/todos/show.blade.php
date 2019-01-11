@@ -10,5 +10,7 @@
                 <p class="lead">{{$todo->body}}</p>
 
             </div>
+    <a href="/todo/{{$todo->id}}/edit" class="btn btn-default">Edit</a>
+    <a href="{{$todo->id}}/edit" class="btn btn-danger">Delete</a>
 
 @endsection
