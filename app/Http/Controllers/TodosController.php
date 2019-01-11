@@ -24,13 +24,9 @@ class TodosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(array $data)
+    public function create()
     {
-        return Todo::create([
-            'title' => $data['title'],
-            'body' => $data['body'],
-            'due' => $data['due']
-        ]);
+        return view('todos.create');
     }
 
     /**
